@@ -1,0 +1,18 @@
+{
+  "appDir": "/srv/santexnik/app",
+  "dataRoot": "/var/santexnik/shops",
+  "shops": [
+    {
+      "id": "doston",
+      "domain": "doston.sizningdomeningiz.uz",
+      "storeName": "Doston Santexnik",
+      "phone": "+998 90 123 45 67",
+      "address": "Toshkent sh., Chilonzor tumani",
+      "telegramBotToken": "",
+      "telegramChatId": "",
+      "deliveryFee": 20000,
+      "freeDeliveryThreshold": 500000,
+      "demo": false
+    }
+  ]
+}

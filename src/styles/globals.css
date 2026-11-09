@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  /* === Asosiy rang tizimi: Ko'k + Qizil === */
+  --color-brand:        #0f2551;
+  --color-brand-light:  #173b78;
+  --color-brand-mid:    #214b91;
+  --color-brand-lighter:#e8eef9;
+  --color-brand-dark:   #091730;
+  --color-red-main:     #e32636;
+  --color-red-dark:     #ca1f2e;
+  --color-ink:          #0f172a;
+
+  /* Eski nomlar bilan moslik (ba'zi komponentlar ishlatadi) */
+  --color-orange-main:  #e32636;
+  --color-copper:       #173b78;
+  --color-sand:         #f0f5ff;
+}
+
+body {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(23, 59, 120, 0.15);
+  color: #173b78;
+}
+
+/* ─────────────────────────────────────────
+   PUBLIC HEADER — shisha effekti
+───────────────────────────────────────── */
+.glass-header {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(1.6);
+}
+
+/* ─────────────────────────────────────────
+   KARTALAR
+───────────────────────────────────────── */
+.surface-card {
+  background: #ffffff;
+  border: 1px solid rgba(23, 59, 120, 0.07);
+  box-shadow: 0 1px 3px rgba(23, 59, 120, 0.04),
+              0 12px 36px rgba(23, 59, 120, 0.05);
+}
+
+.feature-card,
+.review-card,
+.product-card {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.feature-card:hover,
+.review-card:hover,
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(23, 59, 120, 0.18);
+  box-shadow: 0 20px 48px rgba(23, 59, 120, 0.10);
+}
+.feature-icon {
+  transition: transform 220ms ease, background-color 220ms ease;
+}
+.feature-card:hover .feature-icon {
+  transform: translateY(-2px) rotate(-5deg);
+  background-color: #dbe8fc;
+}
+
+/* ─────────────────────────────────────────
+   BIRLAMCHI TUGMA — Qizil
+───────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(180deg, #e32636 0%, #ca1f2e 100%);
+  box-shadow: 0 8px 22px rgba(227, 38, 54, 0.22);
+}
+.btn-primary:hover {
+  filter: brightness(1.06);
+}
+
+/* ─────────────────────────────────────────
+   ADMIN SIDEBAR — Ko'k gradient
+───────────────────────────────────────── */
+.admin-sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e8edf5;
+}
+
+/* ─────────────────────────────────────────
+   ADMIN FONI
+───────────────────────────────────────── */
+.admin-bg {
+  background: #f5f7fb;
+}
+
+/* ─────────────────────────────────────────
+   SCROLLBAR YASHIRISH
+───────────────────────────────────────── */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─────────────────────────────────────────
+   ESKI KLASSLAR — ortga moslik
+───────────────────────────────────────── */
+.home-hero {
+  background: linear-gradient(135deg, #0f2551 0%, #173b78 60%, #1e4fa0 100%);
+}
+.hero-grid {
+  background-size: 52px 52px;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at 70% 50%, black 20%, transparent 78%);
+}
+.hero-title-accent {
+  background: linear-gradient(90deg, #f87171 0%, #e32636 50%, #fb923c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
